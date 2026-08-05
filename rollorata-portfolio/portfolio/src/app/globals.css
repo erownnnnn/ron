@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import "@fontsource/bebas-neue";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/500.css";
+
+:root {
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+
+  --bg: #050505;
+  --bg-secondary: #0f0f0f;
+  --red-primary: #c1121f;
+  --red-accent: #e63946;
+  --white: #ffffff;
+  --gray: #8a8a8a;
+  --gray-line: #2a2a2a;
+
+  --font-display: var(--font-bebas);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-space-grotesk);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-red-primary: var(--red-primary);
+  --color-red-accent: var(--red-accent);
+  --color-white: var(--white);
+  --color-gray: var(--gray);
+  --color-gray-line: var(--gray-line);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--red-primary);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--red-primary);
+  border-radius: 0;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.hero-bgtype {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.78;
+  background: linear-gradient(180deg, #8a0f18 0%, #4a0810 55%, #1a0304 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(230, 57, 70, 0.15);
+  user-select: none;
+}
+
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: var(--red-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s ease;
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.glow-hover {
+  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+.glow-hover:hover {
+  box-shadow: 0 0 40px rgba(230, 57, 70, 0.25);
+  border-color: var(--red-accent);
+}
+
+.mag-btn {
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  z-index: 60;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--red-accent);
+}
