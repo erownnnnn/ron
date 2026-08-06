@@ -65,6 +65,29 @@ export const education = {
   period: "2023 – Present",
 };
 
+export const skillCategories = [
+  {
+    category: "Languages & Web",
+    icon: "Code2",
+    items: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "Python", "Java", "C++"],
+  },
+  {
+    category: "Embedded & IoT",
+    icon: "CircuitBoard",
+    items: ["Arduino", "ESP32", "Embedded Systems", "IoT"],
+  },
+  {
+    category: "Databases & Tools",
+    icon: "Database",
+    items: ["MySQL", "MongoDB", "Git", "GitHub"],
+  },
+  {
+    category: "Design & AI",
+    icon: "BrainCircuit",
+    items: ["UI Design", "Figma", "Machine Learning"],
+  },
+];
+
 export const skills = [
   "HTML",
   "CSS",
@@ -119,32 +142,32 @@ export const process = [
 export const contactCards = [
   {
     label: "Email",
-    value: "aaronbryan.rollorata@email.com",
-    href: "mailto:aaronbryan.rollorata@email.com",
+    value: "aaron.rollorata.2004@gmail.com",
+    href: "mailto:aaron.rollorata.2004@gmail.com",
   },
   {
     label: "Phone",
-    value: "+63 912 345 6789",
-    href: "tel:+639123456789",
+    value: "+63 997 675 7742",
+    href: "tel:+639976757742",
   },
   {
     label: "GitHub",
-    value: "github.com/rollorata",
+    value: "github.com/erownnnnn",
     href: "https://github.com/rollorata",
   },
   {
-    label: "LinkedIn",
-    value: "linkedin.com/in/rollorata",
-    href: "https://linkedin.com/in/rollorata",
+    label: "Instagram",
+    value: "instagram.com/erownnnn/",
+    href: "https://www.instagram.com/erownnnn/",
   },
   {
     label: "Facebook",
-    value: "facebook.com/rollorata",
-    href: "https://facebook.com/rollorata",
+    value: "facebook.com/aaronrollorata14?mibextid=ZbWKwL",
+    href: "https://www.facebook.com/aaronrollorata14?mibextid=ZbWKwL",
   },
   {
     label: "Location",
-    value: "Tagbilaran City, Bohol, Philippines",
+    value: "Dauis, Bohol, Philippines",
     href: "#",
   },
 ];

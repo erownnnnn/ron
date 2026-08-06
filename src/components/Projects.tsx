@@ -94,60 +94,60 @@ function CardPattern({ pattern }: { pattern: Project["pattern"] }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-28 md:py-36 px-6 md:px-10">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="flex items-end justify-between mb-14 border-b border-gray-line pb-6">
-          <div>
-            <span className="section-label">Portfolio</span>
-            <h2 className="font-display text-4xl md:text-6xl mt-2">SELECTED PROJECTS</h2>
-          </div>
-          <a
+      <section id="projects" className="relative py-20 sm:py-28 md:py-36 px-5 sm:px-6 md:px-10">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-10 md:mb-14 border-b border-gray-line pb-6">
+            <div>
+              <span className="section-label">Portfolio</span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-6xl mt-2">SELECTED PROJECTS</h2>
+            </div>
+            <a
             href="#contact"
-            className="hidden md:flex items-center gap-2 font-mono text-xs tracking-[0.15em] uppercase text-gray hover:text-white transition-colors link-underline"
-          >
-            View All Projects <ArrowUpRight size={14} />
-          </a>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((p, i) => (
-            <motion.article
-              key={p.number}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: (i % 3) * 0.1, ease: "easeOut" }}
-              className="group relative"
+              className="flex items-center gap-2 font-mono text-xs tracking-[0.15em] uppercase text-gray hover:text-white transition-colors link-underline"
             >
-              <div className="relative h-64 overflow-hidden bg-bg-secondary border border-gray-line group-hover:border-red-accent/60 transition-colors duration-500">
-                <div className="absolute inset-0 bg-bg-secondary" />
-                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
-                  <CardPattern pattern={p.pattern} />
+              View All Projects <ArrowUpRight size={14} />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            {projects.map((p, i) => (
+              <motion.article
+                key={p.number}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: (i % 3) * 0.1, ease: "easeOut" }}
+                className="group relative"
+              >
+                <div className="relative h-52 sm:h-56 md:h-64 overflow-hidden bg-bg-secondary border border-gray-line group-hover:border-red-accent/60 transition-colors duration-500">
+                  <div className="absolute inset-0 bg-bg-secondary" />
+                  <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                    <CardPattern pattern={p.pattern} />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+                  <div className="absolute top-4 right-4 w-9 h-9 rounded-full border border-white/30 flex items-center justify-center opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
+                    <ArrowUpRight size={16} />
+                  </div>
+                  <span className="absolute bottom-4 left-4 font-display text-4xl sm:text-5xl text-white/10 group-hover:text-red-accent/30 transition-colors duration-500">
+                    {p.number}
+                  </span>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-full border border-white/30 flex items-center justify-center opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
-                  <ArrowUpRight size={16} />
+                <div className="flex items-start justify-between gap-3 pt-4">
+                  <div className="min-w-0">
+                    <h3 className="font-display text-lg sm:text-xl tracking-wide">{p.title}</h3>
+                    <p className="text-gray text-xs font-mono uppercase tracking-[0.1em] mt-1">
+                      {p.category}
+                    </p>
+                  </div>
+                  <ArrowUpRight
+                    size={18}
+                    className="mt-1 shrink-0 text-gray group-hover:text-red-accent group-hover:rotate-45 transition-all duration-400"
+                  />
                 </div>
-                <span className="absolute bottom-4 left-4 font-display text-5xl text-white/10 group-hover:text-red-accent/30 transition-colors duration-500">
-                  {p.number}
-                </span>
-              </div>
-              <div className="flex items-start justify-between pt-4">
-                <div>
-                  <h3 className="font-display text-xl tracking-wide">{p.title}</h3>
-                  <p className="text-gray text-xs font-mono uppercase tracking-[0.1em] mt-1">
-                    {p.category}
-                  </p>
-                </div>
-                <ArrowUpRight
-                  size={18}
-                  className="mt-1 text-gray group-hover:text-red-accent group-hover:rotate-45 transition-all duration-400"
-                />
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
 }
